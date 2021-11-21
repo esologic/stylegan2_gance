@@ -8,14 +8,15 @@ import numpy as np
 import tensorflow as tf
 import dnnlib
 import dnnlib.tflib as tflib
+from typing import Optional
 
 from training import misc
 
 #----------------------------------------------------------------------------
 
 class Projector:
-    def __init__(self):
-        self.num_steps                  = 1000
+    def __init__(self, num_steps: Optional[int] = None):
+        self.num_steps                  = num_steps if num_steps else 1000
         self.dlatent_avg_samples        = 10000
         self.initial_learning_rate      = 0.1
         self.initial_noise_factor       = 0.05
