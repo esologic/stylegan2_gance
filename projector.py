@@ -10,7 +10,7 @@ import dnnlib
 import dnnlib.tflib as tflib
 from typing import Optional
 
-from training import misc
+from ..stylegan2.training import misc
 
 #----------------------------------------------------------------------------
 

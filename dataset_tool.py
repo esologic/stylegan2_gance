@@ -19,7 +19,7 @@ import tensorflow as tf
 import PIL.Image
 import dnnlib.tflib as tflib
 
-from training import dataset
+from .training import dataset
 
 #----------------------------------------------------------------------------
 
@@ -280,8 +280,11 @@ def compare(tfrecord_dir_a, tfrecord_dir_b, ignore_labels):
             print('Label %d is different' % idx)
         idx += 1
     print('Identical images: %d / %d' % (identical_images, idx))
+
     if not ignore_labels:
         print('Identical labels: %d / %d' % (identical_labels, idx))
+
+    return True if identical_images == idx else False
 
 #----------------------------------------------------------------------------
 
